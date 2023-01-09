@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script> 
+</head>
+</head>
+<body>
+    <!--
+        1. React.createElement() -> React element (object)
+        2. So sánh với document.createElement() -> DOM element (object)
+        3. Thay đổi: id, className, style, ...
+        4. Thêm: text, HTML
+        5. Tạo:
+                <h1 title="hello" class="heading">Hello guys!</h1>
+        6. Tạo:
+            <ul>
+                <li>Javascript</li>
+                <li>ReactJs</li>
+            </ul>
+        7. Tạo
+            <div class="post-item">
+                <h2 title="HocReact tai F8">Học ReactJS</h2>
+                <p>Học ReactJS từ cơ bản tới nâng cao</p>
+            </div>
+
+    -->
+
+    <div id="root"></div>
+
+    <!-- 5. <script>
+        //DOM
+        const h1DOM = document.createElement('h1');
+
+        h1DOM.title = 'hello';
+        h1DOM.className = 'heading';
+
+        h1DOM.innerText = 'Hello guys!';
+
+        document.body.appendChild(h1DOM);
+
+        //React -> React-DOM
+
+        //React.createElement(type, props, children, n)
+        const h1React = React.createElement('h1', {
+            title: 'Hello',
+            className: 'heading'
+        },'Hello guys!'); // children
+
+        console.log(h1DOM);
+        console.log(h1React);
+    </script> -->
+
+    6. <script>
+        //DOM
+        const ulDOM = document.createElement('ul');
+        ulDOM.id = 'ul-id',
+        ulDOM.style = 'color: red'
+
+        const liDOM1 = document.createElement('li');
+        liDOM1.innerText = 'Javascript'
+
+        const liDOM2 = document.createElement('li');
+        liDOM2.innerText = 'ReactJS';
+
+        ulDOM.appendChild(liDOM1);
+        ulDOM.appendChild(liDOM2);
+
+
+        //React
+        const root = document.getElementById('root');
+
+        const ulReact = React.createElement('ul',
+            {
+                id : 'ul-id',
+                style : {color:'red'}
+            },
+            React.createElement('li',{id : 'li-1'}, 'Javascript'),
+            React.createElement('li',{id : 'li-2'}, 'ReactJS'),
+        );
+
+        ReactDOM.render(ulReact,root);
+
+    </script>
+
+</body>
+</html>
