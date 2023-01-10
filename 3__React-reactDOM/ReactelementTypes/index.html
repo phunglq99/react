@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!--
+        *Hooks
+
+        1. React element types: string, function/class
+            - Wrapper
+                - Header -> Header component
+                - Content -> Content component
+                - footer -> Footer component
+        2. Biểu diễn đơn giản với JSX
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        const app = (
+            <div className="wrapper">
+                <div className="header">Header</div>
+                <div className="content">Content</div>
+                <div className="footer">Footer</div>
+            </div>
+        )
+
+        ReactDOM.render(app, document.getElementById('root'))
+    </script>
+
+</body>
+</html>
