@@ -11,27 +11,34 @@
 </head>
 <body>
     <!--
-        Props
+        Làm việc với JSX
 
-        - React elements
-            + Sử dụng props giống như với attribute của thẻ HTML
-            + 2 props class, for => className, htmlFor
-            + Phải tuân theo quy ước có sẵn
-        - React Components
-            + Sử dụng props giống như đối số cho Components
-            + Tự do đặt tên props:
-                - Đặt theo camelCase
-                - Có thể bao gồm dấu gạch ngang
-        - Chú ý:
-            + Prop "key" là prop đặc biệt
-            + Props cơ bản là đối số của Component
-                => Props có thể là bất kỳ kiểu dữ liệu gì
-            + Sử dụng destructuring
+        **Phần 1: 
+        - Xử lý DOM events
+        - Component do chúng ta định nghĩa phải viết in hoa ký tự đầu
+            + Chọn component trong 1 obj
+        - Boolean, Null & Undefined không được render
+        - Kết hợp toán tử logic để render theo điều kiện
+
+        **Phần 2:
+        - Props trong JSX
+            - <YourComponent 
+                propName1 = "String literals"
+                propName2 = {expression}
+            />
+            - Props default to "true"
+            - Spread/Rest props
+            - Children prop
+                - <YourComponent> String literals </YourComponent>
+                - <YourComponent> {expression} </YourComponent>
+            - Render props
     -->
 
-    <div id="root"></div>
-    <script type="text/babel">
 
+
+    <div id="root"></div>
+
+    <!-- <script type="text/babel">
         const courses = [
         {
             "id": 15,
@@ -116,70 +123,43 @@
         }
         ]
 
-        // Courses.js
-        function Course({title, description, image_url, price}) {
-            //destructuring
-            return (
-                <div class="course-item">
-                    <label htmlFor="email">Email</label>
-                    <input id="email" />
-                    <img src={image_url} alt={title} />
-                    <h2 className="course-title">{title}</h2>
-                    <p className="course-desc">{description}</p>
-                    <p className="course-price">{price}</p>
-                </div>
-            )
-        }
+        // Tranformer: dự án lớn nên xài để change name properties API
 
+        const CourseItem = ({ course }) => (
+            <div>
+                <h2>{course.title}</h2>
+                <img src = {course.image_url} />
+                <p> {course.description} </p>
+                <p> {course.students_count} </p>
+            </div>
+        )
 
-
-
-        //PostItem.js
-        function PostItem(props) {
-            console.log(props);
-            return (
-                <div class="post-item">
-                    <label htmlFor="email">Email</label>
-                    <input id="email" />
-                    <img src={props.image} alt={props.title} />
-                    <h2 className="post-title">{props.title}</h2>
-                    <p className="post-desc">{props.desc}</p>
-                    <p className="post-published">{props.published}</p>
-                </div>
-            )
-        }
-
-        <PostItem 
-            image = "https://source.unsplash.com/random"
-            title = "C#(.NET) - Tương tác với file Excel"
-            desc = "Bạn có kiến thức nôn ngữ C#! Bạn muốn thực hiện"
-            published = "Một ngày trước - 5 phút đọc"
-            //object
-        />
-
-        //App.js
         function App() {
             return (
-                <div id="wrapper">
-                    {courses.map((course,key) => {
-                        return (
-                            <Course 
-                                key = {key}
-                                title = {course.title}
-                                description = {course.description}
-                                image_url = {course.image_url}
-                                price = {course.price}
-                            />
-                        )
-                    })}
+                <div class="wrapper">
+                    {courses.map(course => (
+                        <CourseItem
+                            key = {course.id}
+                            course = {course}
+                        />
+                    ))}
                 </div>
             )
         }
 
-        //index.js
         ReactDOM.render(<App />, document.getElementById('root'));
+    </script> -->
 
+    <script type="text/babel">
+        function App() {
+            return (
+                <div id = "wrapper">
+                    <button onClick={() => console.log(Math.random())}> Click me! </button>
+                </div>
+            )
+        }
 
+        ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
 </html>
