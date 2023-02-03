@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from 'react'
+
+const orders = [100, 200, 300]
 
 function App() {
+  // So sánh performance với callback function khi add vào initState
+  // const total = orders.reduce((acc, item) => acc + item);
+  // const  [counter, setCounter] = useState(total)
+  // console.log('re-render');
+
+  const [counter, setCounter] = useState(() => {
+    const total = orders.reduce((acc, item) => acc + item);
+    console.log(total);
+      return total //initState là khi return giá trị total
+  }) // initState với calllback giúp tăng performance
+
+  const handleIncrease = () => {
+    // setCounter(counter + 1) // khi gọi hàm setCounter thì react gọi lại hàm App (re-render)
+    setCounter(prevState => prevState + 1) //Callback
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{counter}</h1>
+      <button onClick = {handleIncrease}>Increase</button>
     </div>
   );
 }
