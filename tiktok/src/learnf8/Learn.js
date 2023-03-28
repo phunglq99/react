@@ -1,7 +1,18 @@
-import Content from './Content'
+// import Content from './Content'
+// import Time from './Time'
+// import Avatar from './Avatar'
+// import Lesson from './Lesson'
+
+// import MemoHOC from './MemoHOC'
+
+/*Hook */
+// import UseLOE from './hooks/UseLOE';
+// import UseRef from './hooks/UseRef';
+// import UseMemo from './hooks/UseMemo';
+import UseReducer from './hooks/UseReducer';
 import { useState } from 'react'
 
-const orders = [100, 200, 300]
+// const orders = [100, 200, 300]
 
 function Learn() {
 /* : Counter
@@ -258,7 +269,18 @@ function Learn() {
     return (
         <div className="Learn" style={{padding: 20}}>
             <button onClick={()=> setShow(!show)}>Toggle</button>
-            {show && <Content />}
+            {/* {show && <Content/>} */}
+            {/* {show && <Time />} */}
+            {/* {show && <Avatar />} */}
+            {/* {show && <Lesson />} */}
+
+            {/* {show && <MemoHOC />} */}
+
+            {/* Hooks */}
+            {/* {show && <UseLOE />} */}
+            {/* {show && <UseRef />} */}
+            {/* {show && <UseMemo />} */}
+            {show && <UseReducer />}
         </div>
     )
 }

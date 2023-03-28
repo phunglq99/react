@@ -1,7 +1,5 @@
-import Learn from './Learn';
-import { useState } from 'react'
+import Learn from './learnf8/Learn';
 
-const orders = [100, 200, 300]
 
 function App() {
 
