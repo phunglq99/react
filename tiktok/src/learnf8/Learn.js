@@ -9,9 +9,10 @@
 // import UseLOE from './hooks/UseLOE';
 // import UseRef from './hooks/UseRef';
 // import UseMemo from './hooks/UseMemo';
-import UseReducer from './hooks/UseReducer';
-import { useState } from 'react'
 
+import { useState } from 'react'
+// import Todo from "./hooks/UseReducer/Todo"
+import UseContext from "./hooks/UseContext"
 // const orders = [100, 200, 300]
 
 function Learn() {
@@ -280,7 +281,10 @@ function Learn() {
             {/* {show && <UseLOE />} */}
             {/* {show && <UseRef />} */}
             {/* {show && <UseMemo />} */}
-            {show && <UseReducer />}
+            {/* {show && <UseReducer />} */}
+            {/* {show && <Todo />} */}
+            {show && <UseContext />}
+
         </div>
     )
 }
