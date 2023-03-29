@@ -13,6 +13,7 @@
 import { useState } from 'react'
 // import Todo from "./hooks/UseReducer/Todo"
 import UseContext from "./hooks/UseContext"
+import { ThemeProvider } from './hooks/UseContext/ThemeContext'
 // const orders = [100, 200, 300]
 
 function Learn() {
