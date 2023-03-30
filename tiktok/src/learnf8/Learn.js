@@ -9,11 +9,15 @@
 // import UseLOE from './hooks/UseLOE';
 // import UseRef from './hooks/UseRef';
 // import UseMemo from './hooks/UseMemo';
+// import UseContext from "./hooks/UseContext"
+import GlobalState from './hooks/GlobalState';
 
 import { useState } from 'react'
+import { StoreProvider } from './hooks/GlobalState/store';
+import UseImperativeHandle from './hooks/UseImperativeHandle/UseImperativeHandle';
 // import Todo from "./hooks/UseReducer/Todo"
-import UseContext from "./hooks/UseContext"
-import { ThemeProvider } from './hooks/UseContext/ThemeContext'
+// import { ThemeProvider } from './hooks/UseContext/ThemeContext'
+
 // const orders = [100, 200, 300]
 
 function Learn() {
@@ -269,6 +273,7 @@ function Learn() {
 /* useEffect*/
     const [show, setShow] = useState(false)
     return (
+        // <StoreProvider >
         <div className="Learn" style={{padding: 20}}>
             <button onClick={()=> setShow(!show)}>Toggle</button>
             {/* {show && <Content/>} */}
@@ -284,9 +289,11 @@ function Learn() {
             {/* {show && <UseMemo />} */}
             {/* {show && <UseReducer />} */}
             {/* {show && <Todo />} */}
-            {show && <UseContext />}
-
+            {/* {show && <UseContext />} */}
+            {/* {show && <GlobalState /> } */}
+            {show && <UseImperativeHandle /> }
         </div>
+        // </StoreProvider>
     )
 }
 
