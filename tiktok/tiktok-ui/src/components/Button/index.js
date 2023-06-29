@@ -6,6 +6,7 @@ const cx = classNames.bind(styles);
 
 function Button({ to, href, primary = false, outline = false, text = false, small = false, large = false, rounded = false, disabled = false, children, className, leftIcon, rightIcon, onClick, ...passProps }) {
     let Comp = 'button';
+    //event
     const props = {
         onClick,
         ...passProps,
@@ -21,6 +22,7 @@ function Button({ to, href, primary = false, outline = false, text = false, smal
         });
     }
 
+    // Change tag Link or a or button
     if (to) {
         props.to = to;
         Comp = Link;
@@ -29,6 +31,7 @@ function Button({ to, href, primary = false, outline = false, text = false, smal
         Comp = 'a';
     }
 
+    //Add class
     const classes = cx('wrapper', {
         primary,
         outline,
