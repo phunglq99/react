@@ -1,0 +1,29 @@
+.wrapper {
+    width: 1222px;
+    padding: 0 59px;
+    background-color: #ccc;
+    height: 70px;
+}
+
+.inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+
+    .icon {
+        font-size: 24px;
+        margin-right: 20px;
+        color: var(--text-icon-blur);
+    }
+
+    svg + svg {
+        margin-left: 20px;
+        color: var(--text-icon-blur);
+    }
+}

@@ -1,0 +1,46 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    // text
+    --text-primary: #fff;
+    --text-icon-blur: rgb(255, 255, 255, 0.18);
+
+    // bg
+    --layout-bg: #170f23;
+
+    // Default Layout
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    color: var(--text-primary);
+    background-color: var(--layout-bg);
+    overscroll-behavior: none;
+    overflow: hidden;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    text-decoration: none;
+}
